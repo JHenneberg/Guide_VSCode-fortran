@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "_runner": "terminal",
+  "tasks":[
+    {
+      "label": "build_gfortran",
+      "type": "shell",
+      "windows": {
+        "command": "gfortran"
+      },
+      "linux": {
+        "command": "gfortran"
+      },
+      "osx": {
+        "command": "gfortran"
+      },
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${workspaceRoot}\\${fileBasenameNoExtension}.exe"
+      ]
+    }
+  ]
+}

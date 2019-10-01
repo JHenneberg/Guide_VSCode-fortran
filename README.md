@@ -5,15 +5,14 @@ Visual Studio Code in comparison has some great extensions and is running on Mac
 
 This small Guide should help you to setup a full development environment for FORTRAN.
 
-# Install Visual Studio Code
+# Install Visual Studio Code and Extensions
+
+## Visual Studio Code
 
 * GitHub: https://github.com/microsoft/vscode
 * Download: https://code.visualstudio.com/download
 
 ## Extensions
-
-### Overview
-
 Following Extensions can be useful:
 
 * Modern Fortran
@@ -27,6 +26,8 @@ Following Extensions can be useful:
     * Description: Fortran IntelliSense (IDE functionality) support for VSCode, powered by the Fortran Language Server.
     * GitHub: https://github.com/hansec/vscode-fortran-ls
     * Download: https://marketplace.visualstudio.com/items?itemName=hansec.fortran-ls
+    * Requirements:
+      * fortran-language-server -> python (with pip)
 
 * Fortran Breakpoint Support
 
@@ -34,16 +35,9 @@ Following Extensions can be useful:
     * GitHub: https://github.com/ekibun/FortranBreaker
     * Download: https://marketplace.visualstudio.com/items?itemName=ekibun.fortranbreaker
 
-### Extension: Modern Fortran
-
-#### Requirements
-
-#### Recommended Settings
 
 
-### Extension: Fortran IntelliSense
-
-#### Requirements
+## Requirements
 
 The Fortran IntelliSense Extension needs the fortran-language-server to operate.
 This is written in Python. Python has is own package-management system called pip.
@@ -51,33 +45,38 @@ This is written in Python. Python has is own package-management system called pi
 * Python:
 
     * Description:
-    * GitHub:
+    * GitHub: https://github.com/python
     * Download and Install:
 
-        * Windows:
-        * Linux:
-        * OSX:
+        * Windows: https://www.python.org/downloads/windows/
+        * Linux: via apt-get, packman
+        * OSX: https://www.python.org/downloads/mac-osx/
 * pip:
 
     * Description: pip is the package installer for Python
     * GitHub: https://github.com/pypa/pip
     * Download and Install:
 
-        * Windows: when installing python make sure to install pip as well
-        * Linux:
-        * OSX:
+        * Windows: https://pip.pypa.io/en/stable/installing/
+        * Linux: https://pip.pypa.io/en/stable/installing/
+        * OSX: https://pip.pypa.io/en/stable/installing/
 
 * fortran-language-server:
 
-    * Description:
-    * GitHub:
+    * Description: A Fortran implementation of the Language Server Protocol using Python (2.7+ or 3.0+).
+    * GitHub: https://github.com/hansec/fortran-language-server
     * Download and Install:
 
-        * Windows: cmd -> python -m pip install fortran-language-server
-        * Linux:
-        * OSX:
+        * Windows: ```python -m pip install fortran-language-server```
+        * Linux: ```pip install fortran-language-server```
+        * OSX: ```pip install fortran-language-server```
+    * Update:
 
-Example .fortls:
+        * Windows: ```python -m pip install --upgrade fortran-language-server```
+        * Linux: ```pip install --upgrade fortran-language-server```
+        * OSX : ```pip install --upgrade fortran-language-server```
+
+To setup the fortran language server a file named .fortls is needed in your workspace in Visual Studio Code. Example .fortls:
 ```JSON
 {
   "mod_dirs": [
@@ -91,27 +90,21 @@ Example .fortls:
 }
 ```
 
-#### Recommended Settings
-To upgrade the fortran-language-server
-Windows: python -m pip install --upgrade fortran-language-server
 
 
-
-### Extension: Fortran Breakpoint Support
-#### Requirements
-#### Recommended Settings
-
-##  Debugging
+# Build & Debug
 In general you have to define a "tasks.json" for the build and link process and a "launch.json".
 
 Also have a look at: https://code.visualstudio.com/docs/editor/debugging
 
-### Windows
-1. Install compiler
+
+## Install compiler
   * Windows: (gfortran via MinGW for example, Intel has an installer)
   * Linux:
   * OSX
-2. Create launch.json:
+
+
+## Create launch.json:
 
 ```JSON
 {
@@ -134,7 +127,8 @@ Also have a look at: https://code.visualstudio.com/docs/editor/debugging
 }
 ```
 
-3. The gfortran compiler should be accessible via the command line.
+## Create tasks.json
+The gfortran compiler should be accessible via the command line.
 To be able to use the intel compiler you can not just call ifort.
 The intel compiler can be only after setting the env variable correct.
 Calling the specific *.bat-File we can access ifort from this terminal.
