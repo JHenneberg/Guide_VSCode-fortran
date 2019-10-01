@@ -7,35 +7,36 @@ This small Guide should help you to setup a full development environment for FOR
 
 # Install Visual Studio Code and Extensions
 
+Installing Visual Studio Code and some useful extensions.
+
 ## Visual Studio Code
 
-* GitHub: https://github.com/microsoft/vscode
-* Download: https://code.visualstudio.com/download
+* GitHub: [https://github.com/microsoft/vscode](https://github.com/microsoft/vscode)
+* Download: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
 
 ## Extensions
+
 Following Extensions can be useful:
 
 * Modern Fortran
 
-    * Description: This extension provides support for the Fortran programming language. It includes syntax highlighting, code snippets and a linting based on gfortran.
-    * GitHub: https://github.com/krvajal/vscode-fortran-support
-    * Download: https://marketplace.visualstudio.com/items?itemName=krvajalm.linter-gfortran
+  * Description: This extension provides support for the Fortran programming language. It includes syntax highlighting, code snippets and a linting based on gfortran.
+  * GitHub: [https://github.com/krvajal/vscode-fortran-support](https://github.com/krvajal/vscode-fortran-support)
+  * Download: [https://marketplace.visualstudio.com/items?itemName=krvajalm.linter-gfortran](https://marketplace.visualstudio.com/items?itemName=krvajalm.linter-gfortran)
 
 * Fortran IntelliSense
 
-    * Description: Fortran IntelliSense (IDE functionality) support for VSCode, powered by the Fortran Language Server.
-    * GitHub: https://github.com/hansec/vscode-fortran-ls
-    * Download: https://marketplace.visualstudio.com/items?itemName=hansec.fortran-ls
-    * Requirements:
-      * fortran-language-server -> python (with pip)
+  * Description: Fortran IntelliSense (IDE functionality) support for VSCode, powered by the Fortran Language Server.
+  * GitHub: [https://github.com/hansec/vscode-fortran-ls](https://github.com/hansec/vscode-fortran-ls)
+  * Download: [https://marketplace.visualstudio.com/items?itemName=hansec.fortran-ls](https://marketplace.visualstudio.com/items?itemName=hansec.fortran-ls)
+  * Requirements:
+    * fortran-language-server -> python (with pip)
 
 * Fortran Breakpoint Support
 
     * Description: Add breakpoint support for fortran
-    * GitHub: https://github.com/ekibun/FortranBreaker
-    * Download: https://marketplace.visualstudio.com/items?itemName=ekibun.fortranbreaker
-
-
+    * GitHub: [https://github.com/ekibun/FortranBreaker](https://github.com/ekibun/FortranBreaker)
+    * Download: [https://marketplace.visualstudio.com/items?itemName=ekibun.fortranbreaker](https://marketplace.visualstudio.com/items?itemName=ekibun.fortranbreaker)
 
 ## Requirements
 
@@ -44,39 +45,40 @@ This is written in Python. Python has is own package-management system called pi
 
 * Python:
 
-    * Description:
-    * GitHub: https://github.com/python
-    * Download and Install:
+  * Description:
+  * GitHub: https://github.com/python
+  * Download and Install:
 
-        * Windows: https://www.python.org/downloads/windows/
-        * Linux: via apt-get, packman
-        * OSX: https://www.python.org/downloads/mac-osx/
+    * Windows: https://www.python.org/downloads/windows/
+    * Linux: via apt-get, packman
+    * OSX: https://www.python.org/downloads/mac-osx/
 * pip:
 
-    * Description: pip is the package installer for Python
-    * GitHub: https://github.com/pypa/pip
-    * Download and Install:
+  * Description: pip is the package installer for Python
+  * GitHub: https://github.com/pypa/pip
+  * Download and Install:
 
-        * Windows: https://pip.pypa.io/en/stable/installing/
-        * Linux: https://pip.pypa.io/en/stable/installing/
-        * OSX: https://pip.pypa.io/en/stable/installing/
+    * Windows: https://pip.pypa.io/en/stable/installing/
+    * Linux: https://pip.pypa.io/en/stable/installing/
+    * OSX: https://pip.pypa.io/en/stable/installing/
 
 * fortran-language-server:
 
-    * Description: A Fortran implementation of the Language Server Protocol using Python (2.7+ or 3.0+).
-    * GitHub: https://github.com/hansec/fortran-language-server
-    * Download and Install:
+  * Description: A Fortran implementation of the Language Server Protocol using Python (2.7+ or 3.0+).
+  * GitHub: https://github.com/hansec/fortran-language-server
+  * Download and Install:
 
-        * Windows: ```python -m pip install fortran-language-server```
-        * Linux: ```pip install fortran-language-server```
-        * OSX: ```pip install fortran-language-server```
-    * Update:
+    * Windows: ```python -m pip install fortran-language-server```
+    * Linux: ```pip install fortran-language-server```
+    * OSX: ```pip install fortran-language-server```
+  * Update:
 
-        * Windows: ```python -m pip install --upgrade fortran-language-server```
-        * Linux: ```pip install --upgrade fortran-language-server```
-        * OSX : ```pip install --upgrade fortran-language-server```
+    * Windows: ```python -m pip install --upgrade fortran-language-server```
+    * Linux: ```pip install --upgrade fortran-language-server```
+    * OSX : ```pip install --upgrade fortran-language-server```
 
 To setup the fortran language server a file named .fortls is needed in your workspace in Visual Studio Code. Example .fortls:
+
 ```JSON
 {
   "mod_dirs": [
@@ -90,19 +92,17 @@ To setup the fortran language server a file named .fortls is needed in your work
 }
 ```
 
-
-
 # Build & Debug
-In general you have to define a "tasks.json" for the build and link process and a "launch.json".
+
+In general you have to define a "tasks.json" for the build and link process and a "launch.json" to start to debug.
 
 Also have a look at: https://code.visualstudio.com/docs/editor/debugging
 
-
 ## Install compiler
+
   * Windows: (gfortran via MinGW for example, Intel has an installer)
   * Linux:
   * OSX
-
 
 ## Create launch.json:
 
@@ -128,6 +128,7 @@ Also have a look at: https://code.visualstudio.com/docs/editor/debugging
 ```
 
 ## Create tasks.json
+
 The gfortran compiler should be accessible via the command line.
 To be able to use the intel compiler you can not just call ifort.
 The intel compiler can be only after setting the env variable correct.
@@ -161,3 +162,7 @@ Create "tasks.json":
   ],
 }
 ```
+
+## Debugging
+
+Click on the debug symbol in Visual Studio Code, choose the debug configuration and press start.
