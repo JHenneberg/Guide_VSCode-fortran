@@ -15,6 +15,20 @@ Installing Visual Studio Code and some useful extensions.
 * GitHub: [https://github.com/microsoft/vscode](https://github.com/microsoft/vscode)
 * Download: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
 
+## Settings
+
+If you are working with Fortran in the fixed-column format it is useful to setup rulers at the relevant columns.
+Add this to your ```settings.json```:
+
+```json
+"[fortran_fixed-form]": {
+    "editor.rulers": [
+        6,
+        73
+    ]
+},
+```
+
 ## Extensions
 
 There are some extensions that are very useful.
