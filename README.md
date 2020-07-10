@@ -4,17 +4,22 @@ Fortran is not well supported by a lot of IDEs.
 Microsoft Visual Studio has syntax highlighting but missing a lot of great features, when it comes to auto completion, signature help, find and peek references.
 Visual Studio Code in comparison has some great extensions and is running on MacOs, Linux and Windows.
 
-This small Guide should help you to setup a full development environment for FORTRAN.
+This small Guide should help you to setup a full development environment for Fortran.
 
 # Visual Studio Code
 
+* Description:
+  > Code editing. Redefined. Free. Built on open source. Runs everywhere [[https://code.visualstudio.com/](https://code.visualstudio.com/)].
 * GitHub: [https://github.com/microsoft/vscode](https://github.com/microsoft/vscode)
-* Download: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
+* Download and Install:
+  * Windows: `choco install vscode`, [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
+  * Linux: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
+  * OSX: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
 
 ## Settings
 
 If you are working with Fortran in the fixed-column format it is useful to setup rulers at the relevant columns.
-Add this to your ```settings.json```:
+Add this to your `settings.json`:
 
 ```json
 "[fortran_fixed-form]": {
@@ -28,17 +33,16 @@ Add this to your ```settings.json```:
 # Visual Studio Code Extensions
 
 There are some extensions that are very useful.
-*Modern Fortran* can be used for syntax highlighting and snippets.
-For features like Signature help or GoTo/Peek definition and much more *Fortran IntelliSense* should be installed.
-If you also want to debug, you have to download the extension *Fortran Breakpoint Support*.
-
-Following Extensions can be useful:
+`Modern Fortran` can be used for syntax highlighting and snippets.
+For features like Signature help or GoTo/Peek definition and much more `FORTRAN IntelliSense` should be installed.
+If you also want to debug, you have to download the extension `Fortran Breakpoint Support`.
 
 ## Modern Fortran
 
 ### Overview
 
-* Description: This extension provides support for the Fortran programming language. It includes syntax highlighting, code snippets and a linting based on gfortran.
+* Description:
+  > This extension provides support for the Fortran programming language. It includes syntax highlighting, code snippets and a linting based on `gfortran` [[https://github.com/krvajal/vscode-fortran-support](https://github.com/krvajal/vscode-fortran-support)].
 * GitHub: [https://github.com/krvajal/vscode-fortran-support](https://github.com/krvajal/vscode-fortran-support)
 * Download: [https://marketplace.visualstudio.com/items?itemName=krvajalm.linter-gfortran](https://marketplace.visualstudio.com/items?itemName=krvajalm.linter-gfortran)
 * Requirements:
@@ -46,7 +50,7 @@ Following Extensions can be useful:
 
 ### Settings
 
-Basic symbol functionality or hover information is also provided by `Modern Fortran`. Using `Modern Fortran` and `Fortran IntelliSense` simultaneously those should be deactivated:
+Basic symbol functionality or hover information is also provided by `Modern Fortran`. Using `Modern Fortran` and `FORTRAN IntelliSense` simultaneously those should be deactivated in your `settings.json`:
 
 ```JSON
 "fortran.provideCompletion": false,
@@ -54,37 +58,39 @@ Basic symbol functionality or hover information is also provided by `Modern Fort
 "fortran.provideHover": false,
 ```
 
-## Fortran IntelliSense
+##  FORTRAN IntelliSense
 
 ### Overview
 
-* Description: Fortran IntelliSense (IDE functionality) support for VSCode, powered by the Fortran Language Server.
+* Description:
+  >FORTRAN IntelliSense (IDE functionality) support for VSCode, powered by the Fortran Language Server [[https://github.com/hansec/vscode-fortran-ls](https://github.com/hansec/vscode-fortran-ls)].
 * GitHub: [https://github.com/hansec/vscode-fortran-ls](https://github.com/hansec/vscode-fortran-ls)
 * Download: [https://marketplace.visualstudio.com/items?itemName=hansec.fortran-ls](https://marketplace.visualstudio.com/items?itemName=hansec.fortran-ls)
 * Requirements:
-  * fortran-language-server, python[, python]
+  * fortran-language-server, python[, pip]
 
-This Extension needs the *fortran-language-server* to operate because it is just an interface for the *fortran-language-server* which can be used by different IDE's.
+This Extension needs the `fortran-language-server` to operate because it is just an interface for the `fortran-language-server` which can be used by different IDEs.
 It is written in python
 
 ### Requirements
 
-1. Install python
-2. Install pip
-3. Install fortran-Language-server
+1. Install `python`
+2. Install `pip`
+3. Install `fortran-Language-server`
 
 * Python:
 
   * Description:
   * GitHub: https://github.com/python
   * Download and Install:
-    * Windows: https://www.python.org/downloads/windows/
-    * Linux: via apt-get, packman
-    * OSX: https://www.python.org/downloads/mac-osx/
+    * Windows: `choco install python`, [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)
+    * Linux: `sudo apt-get install python3`, `pacman -S python` | `pacman -S python2`
+    * OSX: [https://www.python.org/downloads/mac-osx/](https://www.python.org/downloads/mac-osx/)
 
 * pip:
 
-  * Description: pip is the package installer for Python
+  * Description:
+    >pip is the package installer for Python. You can use pip to install packages from the Python Package Index and other indexes [[https://github.com/pypa/pip](https://github.com/pypa/pip)].
   * GitHub: https://github.com/pypa/pip
   * Download and Install:
     * Windows: it is often already installed during the installation process of python itself https://pip.pypa.io/en/stable/installing/
@@ -93,7 +99,9 @@ It is written in python
 
 * fortran-language-server:
 
-  * Description: A Fortran implementation of the Language Server Protocol using Python (2.7+ or 3.0+).
+  * Description:
+  >A Fortran implementation of the Language Server Protocol using Python (2.7+ or 3.0+).
+  Editor extensions using this language server to provide autocomplete and other IDE-like functionality are available for Atom, Visual Studio Code, Visual Studio, (Neo)vim, and Emacs [[https://github.com/hansec/fortran-language-server](https://github.com/hansec/fortran-language-server)].
   * GitHub: https://github.com/hansec/fortran-language-server
   * Download and Install:
     * Windows: `python -m pip install fortran-language-server`
@@ -106,11 +114,11 @@ It is written in python
 
 ### Settings
 
-To setup the fortran-language-server a file named `.fortls` is needed in your workspace in Visual Studio Code.
+To setup the `fortran-language-server` a file named `.fortls` is needed in your workspace in Visual Studio Code.
 It is written in JSON.
 Example `.fortls`:
 
-```JSON
+```json
 {
   "mod_dirs": [
     "src",
@@ -126,7 +134,8 @@ Example `.fortls`:
 
 ## Fortran Breakpoint Support
 
-  * Description: Add breakpoint support for fortran
+  * Description:
+  >Add breakpoint support for fortran [[https://github.com/ekibun/FortranBreaker](https://github.com/ekibun/FortranBreaker)]
   * GitHub: [https://github.com/ekibun/FortranBreaker](https://github.com/ekibun/FortranBreaker)
   * Download: [https://marketplace.visualstudio.com/items?itemName=ekibun.fortranbreaker](https://marketplace.visualstudio.com/items?itemName=ekibun.fortranbreaker)
   * Requirements:
@@ -170,9 +179,9 @@ Also have a look at: https://code.visualstudio.com/docs/editor/debugging
 
 ## Create tasks.json
 
-The gfortran compiler should be accessible via the command line.
+The `gfortran` compiler should be accessible via the command line.
 
-Create "tasks.json":
+Create `tasks.json`:
 
 ```JSON
 {
