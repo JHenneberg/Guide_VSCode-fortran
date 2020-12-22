@@ -34,6 +34,8 @@ Add this to your `settings.json`:
 
 Some might like this and some wont: Using cursive italics and programming symbol ligatures.
 
+![code snippet](https://github.com/JHenneberg/Guide_VSCode-fortran/blob/master/public/cursiveItalicsAndLigature.png)
+
 1. Download the font 'Victor Mono' from here: [https://github.com/rubjo/victor-mono](https://github.com/rubjo/victor-mono) or here [https://rubjo.github.io/victor-mono/](https://rubjo.github.io/victor-mono/)
 
 2. Activate font ligatures and select the font:
