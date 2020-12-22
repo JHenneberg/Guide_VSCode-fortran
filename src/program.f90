@@ -1,25 +1,24 @@
-PROGRAM VSCode_Build
-  IMPLICIT NONE
+program nonesense
+  implicit none
 
-  INTEGER :: i, j
-  INTEGER :: x, y
-  INTEGER :: xyz(5, 10)
-  INTEGER :: res
+  real(8) :: r_I(4), s_I(4)
 
-  x = 10
-  y = 20
-  WRITE(*,*) x ,y
+  call get_natural_coordinates_quadrilateral(r_I, s_I)
 
-  x = x * 2
-  y = y * 3
-  WRITE(*,*) x ,y
+  if (r_I(1) >= 0.d0) then
+    write(*, *) r_I(4)
+  else if (all(r_I(:) /= 0.d0)) then
+    write(*, *) r_I(3)
+  end if
+end program nonesense
 
-  res = x + y
-  WRITE(*,*) res
 
-  DO i = 1, 5
-    DO j = 1, 10
-      xyz(i, j) = i * j
-    END DO
-  END DO
-END PROGRAM VSCode_Build
+subroutine get_natural_coordinates_quadrilateral(r_I, s_I)
+  ! 2005, Zienkiewicz, 'The Finite Element Method, Its Basis & Fundamentals', 6th Edition, p.157
+  implicit none
+
+  real(8), intent(out) :: r_I(4), s_I(4)
+
+  r_I = [-1.d0, +1.d0, +1.d0, -1.d0]
+  s_I = [-1.d0, -1.d0, +1.d0, +1.d0]
+end subroutine get_natural_coordinates_quadrilateral
