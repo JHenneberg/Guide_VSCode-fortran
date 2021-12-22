@@ -119,14 +119,14 @@ Basic symbol functionality or hover information is also provided by `Modern Fort
 * Requirements:
   * fortran-language-server, python[, pip]
 
-This Extension needs the `fortran-language-server` to operate because it is just an interface for the `fortran-language-server` which can be used by different IDEs.
-It is written in python
+This Extension needs `fortls` (not maintained original version: [fortran-language-server](https://github.com/hansec/fortran-language-server)) to operate because it is just an interface for the language server which can be used by different IDEs.
+It is written in python.
 
 ### Requirements
 
 1. Install `python`
 2. Install `pip`
-3. Install `fortran-Language-server`
+3. Install `fortls`
 
 * Python:
 
@@ -147,20 +147,20 @@ It is written in python
     * Linux: https://pip.pypa.io/en/stable/installing/
     * OSX: https://pip.pypa.io/en/stable/installing/
 
-* fortran-language-server:
+* fortls:
 
   * Description:
-  >A Fortran implementation of the Language Server Protocol using Python (2.7+ or 3.0+).
-  Editor extensions using this language server to provide autocomplete and other IDE-like functionality are available for Atom, Visual Studio Code, Visual Studio, (Neo)vim, and Emacs [[https://github.com/hansec/fortran-language-server](https://github.com/hansec/fortran-language-server)].
-  * GitHub: https://github.com/hansec/fortran-language-server
+  >A Fortran implementation of the Language Server Protocol (LSP) using Python (3.6+).
+  Editor extensions that can integrate with fortls to provide autocomplete and other IDE-like functionality are available for Visual Studio Code Atom, Visual Studio, (Neo)vim, and Emacs.[[https://github.com/gnikit/fortls](https://github.com/gnikit/fortls)].
+  * GitHub: https://github.com/gnikit/fortls
   * Download and Install:
-    * Windows: `python -m pip install fortran-language-server`
-    * Linux: `pip install fortran-language-server`
-    * OSX: `pip install fortran-language-server`
+    * Windows: `python -m pip install fortls`
+    * Linux: `pip install fortls`
+    * OSX: `pip install fortls`
   * Update:
-    * Windows: `python -m pip install --upgrade fortran-language-server`
-    * Linux: `pip install --upgrade fortran-language-server`
-    * OSX : `pip install --upgrade fortran-language-server`
+    * Windows: `python -m pip install --upgrade fortls`
+    * Linux: `pip install --upgrade fortls`
+    * OSX : `pip install --upgrade fortls`
 
 ### Settings
 
