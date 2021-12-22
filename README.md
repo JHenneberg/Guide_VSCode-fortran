@@ -170,7 +170,7 @@ It is written in python.
 
 ### Settings
 
-To setup the `fortran-language-server` a file named `.fortls` is needed in your workspace in Visual Studio Code.
+To setup `fortls` a file named `.fortls` is needed in your workspace in Visual Studio Code.
 It is written in JSON.
 Example `.fortls`:
 
