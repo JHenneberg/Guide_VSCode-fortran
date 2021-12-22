@@ -22,11 +22,17 @@ If you are working with Fortran in the fixed-column format it is useful to setup
 Add this to your `settings.json`:
 
 ```json
-"[fortran_fixed-form]": {
+"[FortranFixedForm]": {
     "editor.rulers": [
-        6,
-        73
-    ]
+            {
+                "column": 72,
+                "color": "#E06C75"
+            },
+            {
+                "column": 6,
+                "color": "#E06C75"
+            }
+        ]
 },
 ```
 
