@@ -90,43 +90,22 @@ Some might like this and some wont: Using cursive italics and programming symbol
 
 There are some extensions that are very useful.
 `Modern Fortran` can be used for syntax highlighting and snippets.
-For features like Signature help or GoTo/Peek definition and much more `FORTRAN IntelliSense` should be installed.
-If you also want to debug, you have to download the extension `Fortran Breakpoint Support`.
+For features like Signature help or GoTo/Peek definition and much more `fortls` should be installed.
 
 ## Modern Fortran
 
 ### Overview
 
 * Description:
-  > This extension provides support for the Fortran programming language. It includes syntax highlighting, code snippets and a linting based on `gfortran` [[https://github.com/krvajal/vscode-fortran-support](https://github.com/krvajal/vscode-fortran-support)].
-* GitHub: [https://github.com/krvajal/vscode-fortran-support](https://github.com/krvajal/vscode-fortran-support)
-* Download: [https://marketplace.visualstudio.com/items?itemName=krvajalm.linter-gfortran](https://marketplace.visualstudio.com/items?itemName=krvajalm.linter-gfortran)
-* Requirements:
-  * none
+  > This extension provides support for the Fortran programming language. It includes syntax highlighting, code snippets and a linting based on `gfortran`, `ifort` and `ifx` [[https://github.com/fortran-lang/vscode-fortran-support](https://github.com/fortran-lang/vscode-fortran-support)].
+* GitHub: [https://github.com/fortran-lang/vscode-fortran-support](https://github.com/fortran-lang/vscode-fortran-support)
+* Download: [https://marketplace.visualstudio.com/items?itemName=fortran-lang.linter-gfortran](https://marketplace.visualstudio.com/items?itemName=fortran-lang.linter-gfortran)
+* Optional Requirements:
+  * `fortls`
 
-### Settings
+### Language Server Integration
 
-Basic symbol functionality or hover information is also provided by `Modern Fortran`. Using `Modern Fortran` and `FORTRAN IntelliSense` simultaneously those should be deactivated in your `settings.json`:
-
-```JSON
-"fortran.provideCompletion": false,
-"fortran.provideSymbols": false,
-"fortran.provideHover": false,
-```
-
-## FORTRAN IntelliSense
-
-### Overview
-
-* Description:
-  >FORTRAN IntelliSense (IDE functionality) support for VSCode, powered by the Fortran Language Server [[https://github.com/hansec/vscode-fortran-ls](https://github.com/hansec/vscode-fortran-ls)].
-* GitHub: [https://github.com/hansec/vscode-fortran-ls](https://github.com/hansec/vscode-fortran-ls)
-* Download: [https://marketplace.visualstudio.com/items?itemName=hansec.fortran-ls](https://marketplace.visualstudio.com/items?itemName=hansec.fortran-ls)
-* Requirements:
-  * fortran-language-server, python[, pip]
-
-This Extension needs `fortls` (not maintained original version: [fortran-language-server](https://github.com/hansec/fortran-language-server)) to operate because it is just an interface for the language server which can be used by different IDEs.
-It is written in python.
+Symbol functionality and hover information is also provided by `Modern Fortran` when the fortran language server `fortls` is installed which is written in python.
 
 ### Requirements
 
@@ -186,15 +165,6 @@ Example `.fortls`:
   "debug_log": false
 }
 ```
-
-## Fortran Breakpoint Support
-
-  * Description:
-  >Add breakpoint support for fortran [[https://github.com/ekibun/FortranBreaker](https://github.com/ekibun/FortranBreaker)]
-  * GitHub: [https://github.com/ekibun/FortranBreaker](https://github.com/ekibun/FortranBreaker)
-  * Download: [https://marketplace.visualstudio.com/items?itemName=ekibun.fortranbreaker](https://marketplace.visualstudio.com/items?itemName=ekibun.fortranbreaker)
-  * Requirements:
-    * none
 
 # Build & Debug
 
